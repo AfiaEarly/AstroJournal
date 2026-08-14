@@ -5,18 +5,22 @@ using namespace std;
 
 void options()
 {
+    cout << "---OPTIONS---" << endl;
     cout << "1.New Record" << endl;
     cout << "2.View Record" << endl;
 }
 
 int main()
 {
+
     options();
+
     while (1)
     {
         int option;
         cout << "Choose option:";
         cin >> option;
+        cout << endl;
         switch (option)
         {
         case 1:
@@ -34,13 +38,19 @@ int main()
             cin >> type;
 
             cout << "Enter objectname:";
-            cin >> objectName;
+            getline(cin >> ws, objectName);
 
             cout << "Enter direction:";
             cin >> direction;
 
             addRecords({date, time, type, objectName, direction});
-            cout << "To go back to menu, press 0" << endl;
+
+            cout << endl;
+
+            cout << "Succesfully added record!" << endl;
+
+            options();
+
             break;
         }
         case 2:
@@ -49,12 +59,15 @@ int main()
             auto rec = getRecords();
             cout << "Current Records:" << endl;
             printRecords(rec);
+            cout << endl;
+            options();
 
-            cout << "To go back to menu, press 0" << endl;
             break;
         }
-        case 0:
-            options();
+        default:
+
+            cout << "Invalid Option" << endl;
+
             break;
         }
     }

@@ -70,11 +70,12 @@ void printRecords(vector<Record> records)
 {
     for (int i = 0; i < records.size(); i++)
     {
+        cout << "_______________________________________________" << endl;
         cout << i + 1 << ".";
-        cout << "DATE:" << records[i].date << "|";
-        cout << "TIME:" << records[i].time << "|";
-        cout << "TYPE:" << records[i].type << "|";
-        cout << "OBJECT NAME:" << records[i].objectName << "|";
-        cout << "DIRECTION:" << records[i].direction << "|" << endl;
+        cout << "DATE:" << records[i].date << " ";
+        cout << "TIME:" << records[i].time << " ";
+        cout << "TYPE:" << records[i].type << endl;
+        cout << "OBJECT NAME:" << records[i].objectName << " ";
+        cout << "DIRECTION:" << records[i].direction << endl;
     }
 }
