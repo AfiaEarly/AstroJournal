@@ -12,7 +12,8 @@ void options()
 
 int main()
 {
-
+    vector<Record> records;
+    getRecords(records);
     options();
 
     while (1)
@@ -25,25 +26,25 @@ int main()
         {
         case 1:
         {
-
+            Record rc;
             string date, time, type, objectName, direction;
 
             cout << "Enter date:";
-            cin >> date;
+            cin >> rc.date;
 
             cout << "Enter time:";
-            cin >> time;
+            cin >> rc.time;
 
             cout << "Enter type:";
-            cin >> type;
+            cin >> rc.type;
 
             cout << "Enter objectname:";
-            getline(cin >> ws, objectName);
+            getline(cin >> ws, rc.objectName);
 
             cout << "Enter direction:";
-            cin >> direction;
+            cin >> rc.direction;
 
-            addRecords({date, time, type, objectName, direction});
+            addRecords(records, rc);
 
             cout << endl;
 
@@ -56,10 +57,7 @@ int main()
         case 2:
 
         {
-            auto rec = getRecords();
-            cout << "Current Records:" << endl;
-            printRecords(rec);
-            cout << endl;
+            printRecords(records);
             options();
 
             break;

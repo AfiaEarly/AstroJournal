@@ -6,17 +6,22 @@
 #define filepath "records.txt"
 using namespace std;
 
-void addRecords(Record records)
+void addRecords(vector<Record> &records, Record rc)
 {
     ofstream file(filepath, ios::app);
-    file << records.date << "," << records.time << "," << records.type << "," << records.objectName << "," << records.direction << "," << "\n";
+    file << rc.date << "," << rc.time << "," << rc.type << "," << rc.objectName << "," << rc.direction << "," << "\n";
+    records.push_back(rc);
 }
 
-vector<Record> getRecords()
+void getRecords(vector<Record> &records)
 {
+    if (!records.empty())
+    {
+        return;
+    }
     ifstream file(filepath);
     string line;
-    vector<Record> records;
+
     while (getline(file, line))
     {
         string date, time, type, objectName, direction, temp;
@@ -63,7 +68,6 @@ vector<Record> getRecords()
         rc.direction = direction;
         records.push_back(rc);
     }
-    return records;
 }
 
 void printRecords(vector<Record> records)

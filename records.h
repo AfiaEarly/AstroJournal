@@ -10,8 +10,8 @@ struct Record
     string date, time, type, objectName, direction;
 };
 
-void addRecords(Record records);
+void addRecords(vector<Record> &records, Record rc);
 
-vector<Record> getRecords();
+void getRecords(vector<Record> &records);
 
 void printRecords(vector<Record> records);
