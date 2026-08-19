@@ -72,14 +72,37 @@ void getRecords(vector<Record> &records)
 
 void printRecords(vector<Record> records)
 {
-    for (int i = 0; i < records.size(); i++)
+    int start = 0;
+    int limit = 5;
+    while (1)
     {
-        cout << "_______________________________________________" << endl;
-        cout << i + 1 << ".";
-        cout << "DATE:" << records[i].date << " ";
-        cout << "TIME:" << records[i].time << " ";
-        cout << "TYPE:" << records[i].type << endl;
-        cout << "OBJECT NAME:" << records[i].objectName << " ";
-        cout << "DIRECTION:" << records[i].direction << endl;
+
+        for (int i = start; i < limit && i < records.size(); i++)
+        {
+            cout << "_______________________________________________" << endl;
+            cout << i + 1 << ".";
+            cout << "DATE:" << records[i].date << " ";
+            cout << "TIME:" << records[i].time << " ";
+            cout << "TYPE:" << records[i].type << endl;
+            cout << "OBJECT NAME:" << records[i].objectName << " ";
+            cout << "DIRECTION:" << records[i].direction << endl;
+        }
+        cout << endl;
+        char choice;
+        cout << ">> Press N to go Next<< || >> Press P to go Previous <<" << endl;
+        cin >> choice;
+        if (choice == 'N' || choice == 'n')
+        {
+            start = limit;
+            limit += 5;
+        }
+        else if (choice == 'P' || choice == 'p')
+        {
+            if (start >= 5)
+            {
+                limit = start;
+                start -= 5;
+            }
+        }
     }
 }
