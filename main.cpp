@@ -14,15 +14,13 @@ int main()
 {
     vector<Record> records;
     getRecords(records);
-    options();
+
+    int selected_option = 0;
 
     while (1)
     {
-        int option;
-        cout << "Choose option:";
-        cin >> option;
-        cout << endl;
-        switch (option)
+
+        switch (selected_option)
         {
         case 1:
         {
@@ -57,8 +55,16 @@ int main()
         case 2:
 
         {
-            printRecords(records);
+            printRecords(records, selected_option);
+
+            break;
+        }
+        case 0:
+        {
             options();
+
+            cout << "Choose option: ";
+            cin >> selected_option;
 
             break;
         }

@@ -70,7 +70,7 @@ void getRecords(vector<Record> &records)
     }
 }
 
-void printRecords(vector<Record> records)
+void printRecords(vector<Record> records, int &selected_option)
 {
     int start = 0;
     int limit = 5;
@@ -88,9 +88,21 @@ void printRecords(vector<Record> records)
             cout << "DIRECTION:" << records[i].direction << endl;
         }
         cout << endl;
+
         char choice;
-        cout << ">> Press N to go Next<< || >> Press P to go Previous <<" << endl;
+
+        cout << "N. Next" << endl
+             << "P. Previous" << endl
+             << "0. Main Menu" << endl;
+
         cin >> choice;
+
+        if (choice == '0')
+        {
+            selected_option = 0;
+            break;
+        }
+
         if (choice == 'N' || choice == 'n')
         {
             start = limit;
