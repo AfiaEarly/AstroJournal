@@ -49,7 +49,7 @@ int main()
 
             cout << "Succesfully added record!" << endl;
 
-            options();
+            selected_option = 0;
 
             break;
         }
@@ -64,6 +64,8 @@ int main()
         case 3:
         {
             deleteRecord(records);
+
+            selected_option = 0;
 
             break;
         }
