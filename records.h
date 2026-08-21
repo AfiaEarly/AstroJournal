@@ -15,3 +15,5 @@ void addRecords(vector<Record> &records, Record rc);
 void getRecords(vector<Record> &records);
 
 void printRecords(vector<Record> records, int &selected_option);
+void rewriteRecord(vector<Record> &records);
+void deleteRecord(vector<Record> &records);

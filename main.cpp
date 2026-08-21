@@ -8,6 +8,7 @@ void options()
     cout << "---OPTIONS---" << endl;
     cout << "1.New Record" << endl;
     cout << "2.View Record" << endl;
+    cout << "3.Delete Record" << endl;
 }
 
 int main()
@@ -48,17 +49,27 @@ int main()
 
             cout << "Succesfully added record!" << endl;
 
-            options();
+            selected_option = 0;
 
             break;
         }
-        case 2:
 
+        case 2:
         {
             printRecords(records, selected_option);
 
             break;
         }
+
+        case 3:
+        {
+            deleteRecord(records);
+
+            selected_option = 0;
+
+            break;
+        }
+
         case 0:
         {
             options();
@@ -68,6 +79,7 @@ int main()
 
             break;
         }
+
         default:
 
             cout << "Invalid Option" << endl;
