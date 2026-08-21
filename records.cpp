@@ -9,7 +9,9 @@ using namespace std;
 void addRecords(vector<Record> &records, Record rc)
 {
     ofstream file(filepath, ios::app);
+
     file << rc.date << "," << rc.time << "," << rc.type << "," << rc.objectName << "," << rc.direction << "," << "\n";
+
     records.push_back(rc);
 }
 
@@ -117,4 +119,29 @@ void printRecords(vector<Record> records, int &selected_option)
             }
         }
     }
+}
+
+void rewriteRecord(vector<Record> &records)
+{
+    ofstream file(filepath);
+
+    for (int i = 0; i < records.size(); i++)
+    {
+        file << records[i].date << "," << records[i].time << ","
+             << records[i].type << "," << records[i].objectName << ","
+             << records[i].direction << "," << endl;
+    }
+}
+
+void deleteRecord(vector<Record> &records)
+{
+    int index;
+
+    cout << "Enter Record Index to delete: ";
+    cin >> index;
+
+    records.erase(records.begin() + index - 1);
+
+    rewriteRecord(records);
+    cout << "Succesfully deleted record!" << endl;
 }
