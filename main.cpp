@@ -19,6 +19,10 @@ int main()
 
     int selected_option = 0;
 
+    cout << endl;
+    cout << "=======  ASTROJOURNAL  =======" << endl;
+    cout << endl;
+
     while (1)
     {
 
@@ -28,6 +32,8 @@ int main()
         {
             Record rc;
             string date, time, type, objectName, direction;
+
+            cout << endl;
 
             cout << "Enter date:";
             cin >> rc.date;
