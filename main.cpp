@@ -1,6 +1,6 @@
 #include "records.h"
 #include <iostream>
-
+#include "stats.h"
 using namespace std;
 
 void options()
@@ -9,6 +9,7 @@ void options()
     cout << "1.New Record" << endl;
     cout << "2.View Record" << endl;
     cout << "3.Delete Record" << endl;
+    cout << "4.Statistics" << endl;
 }
 
 int main()
@@ -68,6 +69,13 @@ int main()
             selected_option = 0;
 
             break;
+        }
+
+        case 4:
+        {
+            statistics(records);
+            cout << endl;
+            selected_option = 0;
         }
 
         case 0:
