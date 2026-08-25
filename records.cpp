@@ -145,3 +145,68 @@ void deleteRecord(vector<Record> &records)
     rewriteRecord(records);
     cout << "Succesfully deleted record!" << endl;
 }
+
+void updateRecord(vector<Record> &records)
+{
+    int index;
+
+    index--;
+
+    cout << "Enter Record Index to update: ";
+    cin >> index;
+
+    cout << "What do you want to change?" << endl;
+    cout << "1.Date" << endl;
+    cout << "2.Time" << endl;
+    cout << "3.Type" << endl;
+    cout << "4.Object name" << endl;
+    cout << "5.Direction" << endl;
+
+    int choice;
+    cout << "Enter Choice:";
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        cout << "Enter new date:";
+        cin >> records[index - 1].date;
+
+        break;
+
+    case 2:
+
+        cout << "Enter new time:";
+        cin >> records[index - 1].time;
+
+        break;
+
+    case 3:
+
+        cout << "Enter new type:";
+        cin >> records[index - 1].type;
+
+        break;
+
+    case 4:
+
+        cout << "Enter new object name:";
+        cin >> records[index - 1].objectName;
+
+        break;
+
+    case 5:
+
+        cout << "Enter new direction:";
+        cin >> records[index - 1].direction;
+
+        break;
+
+    default:
+        break;
+    }
+
+    rewriteRecord(records);
+    cout << endl;
+    cout << "Succesfully updated record!" << endl;
+}

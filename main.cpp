@@ -9,7 +9,8 @@ void options()
     cout << "1.New Record" << endl;
     cout << "2.View Record" << endl;
     cout << "3.Delete Record" << endl;
-    cout << "4.Statistics" << endl;
+    cout << "4.Update Record" << endl;
+    cout << "5.Statistics" << endl;
 }
 
 int main()
@@ -78,6 +79,16 @@ int main()
         }
 
         case 4:
+        {
+            updateRecord(records);
+
+            cout << endl;
+            selected_option = 0;
+
+            break;
+        }
+
+        case 5:
         {
             statistics(records);
             cout << endl;
