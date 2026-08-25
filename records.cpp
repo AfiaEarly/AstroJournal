@@ -150,8 +150,6 @@ void updateRecord(vector<Record> &records)
 {
     int index;
 
-    index--;
-
     cout << "Enter Record Index to update: ";
     cin >> index;
 
