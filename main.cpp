@@ -1,6 +1,8 @@
 #include "records.h"
-#include <iostream>
+#include "search.h"
 #include "stats.h"
+#include <iostream>
+
 using namespace std;
 
 void options()
@@ -10,7 +12,8 @@ void options()
     cout << "2.View Record" << endl;
     cout << "3.Delete Record" << endl;
     cout << "4.Update Record" << endl;
-    cout << "5.Statistics" << endl;
+    cout << "5.Search Record" << endl;
+    cout << "6.Statistics" << endl;
 }
 
 int main()
@@ -83,6 +86,7 @@ int main()
             updateRecord(records);
 
             cout << endl;
+
             selected_option = 0;
 
             break;
@@ -90,8 +94,21 @@ int main()
 
         case 5:
         {
-            statistics(records);
+            searchRecord(records);
+
             cout << endl;
+
+            selected_option = 0;
+
+            break;
+        }
+
+        case 6:
+        {
+            statistics(records);
+
+            cout << endl;
+
             selected_option = 0;
         }
 
@@ -100,6 +117,7 @@ int main()
             options();
 
             cout << "Choose option: ";
+
             cin >> selected_option;
 
             break;
