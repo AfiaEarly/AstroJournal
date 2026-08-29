@@ -1,4 +1,5 @@
 #include "records.h"
+#include "streak.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -12,6 +13,7 @@ void addRecords(vector<Record> &records, Record rc)
 
     file << rc.date << "," << rc.time << "," << rc.type << "," << rc.objectName << "," << rc.direction << "," << "\n";
 
+    updateStreak(rc.date);
     records.push_back(rc);
 }
 

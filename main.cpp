@@ -1,6 +1,7 @@
 #include "records.h"
 #include "search.h"
 #include "stats.h"
+#include "streak.h"
 #include <iostream>
 
 using namespace std;
@@ -114,6 +115,8 @@ int main()
 
         case 0:
         {
+            printStreak();
+
             options();
 
             cout << "Choose option: ";
