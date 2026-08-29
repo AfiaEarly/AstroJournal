@@ -16,6 +16,7 @@ void statistics(vector<Record> &records)
         objNameCount[records[i].objectName]++;
     }
 
+    cout << endl;
     cout << "----STATISTICS----" << endl;
     cout << endl;
 
