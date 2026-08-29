@@ -110,10 +110,11 @@ void printStreak()
     auto streak = getStreak();
 
     cout << endl;
-    cout << "==== STREAK ====" << endl;
+    cout << "STREAK :" << endl;
 
+    cout << "----------------------" << endl;
     cout << "Streak: " << streak.streakCount << endl;
-
     cout << "Last added: " << streak.date << endl;
+    cout << "----------------------" << endl;
     cout << endl;
 }

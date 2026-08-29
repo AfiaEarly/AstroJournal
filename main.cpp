@@ -9,6 +9,7 @@ using namespace std;
 void options()
 {
     cout << "---OPTIONS---" << endl;
+    cout << endl;
     cout << "1.New Record" << endl;
     cout << "2.View Record" << endl;
     cout << "3.Delete Record" << endl;
@@ -25,7 +26,9 @@ int main()
     int selected_option = 0;
 
     cout << endl;
-    cout << "=======  ASTROJOURNAL  =======" << endl;
+    cout << "-----------------" << endl;
+    cout << "|  ASTROJOURNAL  |" << endl;
+    cout << "-----------------" << endl;
     cout << endl;
 
     while (1)
