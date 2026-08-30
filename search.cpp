@@ -11,13 +11,7 @@ void searchPrintRecord(vector<Record> &records, function<bool(Record)> matches)
     {
         if (matches(records[i]))
         {
-            cout << "_______________________________________________" << endl;
-            cout << i + 1 << ".";
-            cout << "DATE:" << records[i].date << " ";
-            cout << "TIME:" << records[i].time << " ";
-            cout << "TYPE:" << records[i].type << endl;
-            cout << "OBJECT NAME:" << records[i].objectName << " ";
-            cout << "DIRECTION:" << records[i].direction << endl;
+            printRecord(records[i], i);
         }
     }
 }

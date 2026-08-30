@@ -7,6 +7,24 @@
 #define filepath "records.txt"
 using namespace std;
 
+void printWhiteSpace(int number)
+{
+    int total = 0;
+
+    while (number > 0)
+    {
+        number /= 10;
+        total++;
+    }
+
+    total += 2;
+
+    while (total--)
+    {
+        cout << " ";
+    }
+}
+
 void addRecords(vector<Record> &records, Record rc)
 {
     ofstream file(filepath, ios::app);
@@ -74,22 +92,29 @@ void getRecords(vector<Record> &records)
     }
 }
 
+void printRecord(Record record, int i)
+{
+    cout << "-----------------------------" << endl;
+    cout << i + 1 << ". ";
+    cout << record.date << " ";
+    cout << record.time << endl;
+    printWhiteSpace(i + 1);
+    cout << record.type << ", ";
+    cout << record.objectName << endl;
+    printWhiteSpace(i + 1);
+    cout << record.direction << endl;
+}
+
 void printRecords(vector<Record> records, int &selected_option)
 {
     int start = 0;
-    int limit = 5;
+    int limit = 10;
     while (1)
     {
 
         for (int i = start; i < limit && i < records.size(); i++)
         {
-            cout << "_______________________________________________" << endl;
-            cout << i + 1 << ".";
-            cout << "DATE:" << records[i].date << " ";
-            cout << "TIME:" << records[i].time << " ";
-            cout << "TYPE:" << records[i].type << endl;
-            cout << "OBJECT NAME:" << records[i].objectName << " ";
-            cout << "DIRECTION:" << records[i].direction << endl;
+            printRecord(records[i], i);
         }
         cout << endl;
 
@@ -110,14 +135,14 @@ void printRecords(vector<Record> records, int &selected_option)
         if (choice == 'N' || choice == 'n')
         {
             start = limit;
-            limit += 5;
+            limit += 10;
         }
         else if (choice == 'P' || choice == 'p')
         {
-            if (start >= 5)
+            if (start >= 10)
             {
                 limit = start;
-                start -= 5;
+                start -= 10;
             }
         }
     }

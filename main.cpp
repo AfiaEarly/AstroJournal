@@ -43,19 +43,19 @@ int main()
 
             cout << endl;
 
-            cout << "Enter date:";
+            cout << "Date: ";
             cin >> rc.date;
 
-            cout << "Enter time:";
+            cout << "Time: ";
             cin >> rc.time;
 
-            cout << "Enter type:";
+            cout << "Type: ";
             cin >> rc.type;
 
-            cout << "Enter objectname:";
+            cout << "Objectname: ";
             getline(cin >> ws, rc.objectName);
 
-            cout << "Enter direction:";
+            cout << "Direction: ";
             cin >> rc.direction;
 
             addRecords(records, rc);

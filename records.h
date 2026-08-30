@@ -21,3 +21,5 @@ void rewriteRecord(vector<Record> &records);
 void deleteRecord(vector<Record> &records);
 
 void updateRecord(vector<Record> &records);
+
+void printRecord(Record record, int i);
