@@ -25,6 +25,22 @@ void printWhiteSpace(int number)
     }
 }
 
+vector<Record> reverseArray(vector<Record> records)
+{
+    int start = 0, end = records.size() - 1;
+
+    vector<Record> reversedArr = records;
+
+    while (start < end)
+    {
+        swap(records[start], records[end]);
+        start++;
+        end--;
+    }
+
+    return records;
+}
+
 void addRecords(vector<Record> &records, Record rc)
 {
     ofstream file(filepath, ios::app);
@@ -109,12 +125,16 @@ void printRecords(vector<Record> records, int &selected_option)
 {
     int start = 0;
     int limit = 10;
+
+    auto reverseRecords = reverseArray(records);
+
     while (1)
     {
 
-        for (int i = start; i < limit && i < records.size(); i++)
+        for (int i = start; i < limit && i < reverseRecords.size(); i++)
         {
-            printRecord(records[i], i);
+            int idx = reverseRecords.size() - i - 1;
+            printRecord(reverseRecords[i], idx);
         }
         cout << endl;
 
